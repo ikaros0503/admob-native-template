@@ -2,7 +2,7 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.gms.ads.formats.UnifiedNativeAdView
+    <com.google.android.gms.ads.nativead.NativeAdView
         android:id="@+id/native_ad_view"
         android:layout_width="match_parent"
         android:layout_height="300dp"
@@ -19,7 +19,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.gms.ads.formats.MediaView
+            <com.google.android.gms.ads.nativead.MediaView
                 android:id="@+id/media_view"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -64,7 +64,10 @@
                         app:layout_constraintDimensionRatio="H,1:1"
                         app:layout_constraintEnd_toStartOf="@id/content"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginLeft="@dimen/gnt_default_margin"
+                        android:layout_marginRight="@dimen/gnt_no_margin"
+                        android:contentDescription="@string/s1" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/content"
@@ -75,7 +78,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/icon"
-                        app:layout_constraintTop_toTopOf="parent">
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="@dimen/gnt_default_margin">
 
                         <LinearLayout
                             android:id="@+id/headline"
@@ -104,7 +108,7 @@
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"></TextView>
+                                app:layout_constraintTop_toTopOf="parent" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -133,7 +137,9 @@
                                 android:textStyle="bold"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"></TextView>
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginLeft="@dimen/gnt_no_margin"
+                                android:layout_marginRight="@dimen/gnt_default_margin" />
 
                             <RatingBar
                                 android:id="@+id/rating_bar"
@@ -171,7 +177,7 @@
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/ad_notification_view"
-                                app:layout_constraintTop_toTopOf="parent"></TextView>
+                                app:layout_constraintTop_toTopOf="parent" />
 
                         </LinearLayout>
 
@@ -211,5 +217,5 @@
                 app:layout_constraintTop_toBottomOf="@id/body" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.gms.ads.formats.UnifiedNativeAdView>
+    </com.google.android.gms.ads.nativead.NativeAdView>
 </merge>

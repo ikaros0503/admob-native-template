@@ -223,20 +223,17 @@ public class TemplateView extends FrameLayout {
         callToActionView.setText(cta);
 
         //  Set the secondary view to be the star rating if available.
-//        if (starRating != null && starRating > 0) {
-//            secondaryView.setVisibility(GONE);
-//            ratingBar.setVisibility(VISIBLE);
-//            ratingBar.setMax(5);
-//            nativeAdView.setStarRatingView(ratingBar);
-//        } else {
-//            secondaryView.setText(secondaryText);
-//            secondaryView.setVisibility(VISIBLE);
-//            ratingBar.setVisibility(GONE);
-//        }
-        secondaryView.setText(secondaryText);
-        secondaryView.setVisibility(VISIBLE);
         if (ratingBar != null) {
-            ratingBar.setVisibility(GONE);
+            if (starRating != null && starRating > 0) {
+                secondaryView.setVisibility(GONE);
+                ratingBar.setVisibility(VISIBLE);
+                ratingBar.setMax(5);
+                nativeAdView.setStarRatingView(ratingBar);
+            } else {
+                secondaryView.setText(secondaryText);
+                secondaryView.setVisibility(VISIBLE);
+                ratingBar.setVisibility(GONE);
+            }
         }
 
         if (icon != null) {

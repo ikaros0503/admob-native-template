@@ -5,7 +5,7 @@
     <com.google.android.gms.ads.nativead.NativeAdView
         android:id="@+id/native_ad_view"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="match_parent"
         android:background="@drawable/gnt_outline_shape">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,7 +33,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/middle"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="@dimen/gnt_default_margin"
                 app:layout_constraintBottom_toTopOf="@+id/body"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -202,7 +202,7 @@
             <Button
                 android:id="@+id/cta"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:gravity="center"

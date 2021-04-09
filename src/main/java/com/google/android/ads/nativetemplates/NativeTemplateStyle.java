@@ -30,7 +30,7 @@ public class NativeTemplateStyle {
   private int callToActionTypefaceColor;
 
   // Call to action background color.
-  private ColorDrawable callToActionBackgroundColor;
+  private int callToActionBackgroundColor;
 
   // All templates have a primary text area which is populated by the native ad's headline.
 
@@ -92,7 +92,7 @@ public class NativeTemplateStyle {
     return callToActionTypefaceColor;
   }
 
-  public ColorDrawable getCallToActionBackgroundColor() {
+  public int getCallToActionBackgroundColor() {
     return callToActionBackgroundColor;
   }
 
@@ -172,7 +172,7 @@ public class NativeTemplateStyle {
       return this;
     }
 
-    public Builder withCallToActionBackgroundColor(ColorDrawable callToActionBackgroundColor) {
+    public Builder withCallToActionBackgroundColor(int callToActionBackgroundColor) {
       this.styles.callToActionBackgroundColor = callToActionBackgroundColor;
       return this;
     }

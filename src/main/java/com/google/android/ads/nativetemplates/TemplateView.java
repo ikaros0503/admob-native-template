@@ -162,9 +162,9 @@ public class TemplateView extends FrameLayout {
             tertiaryView.setTextSize(tertiaryTextSize);
         }
 
-        Drawable ctaBackground = styles.getCallToActionBackgroundColor();
-        if (ctaBackground != null && callToActionView != null) {
-            callToActionView.setBackground(ctaBackground);
+        int ctaBackground = styles.getCallToActionBackgroundColor();
+        if (ctaBackground > 0 && callToActionView != null) {
+            callToActionView.setBackgroundColor(ctaBackground);
         }
 
         Drawable primaryBackground = styles.getPrimaryTextBackgroundColor();
@@ -223,14 +223,19 @@ public class TemplateView extends FrameLayout {
         callToActionView.setText(cta);
 
         //  Set the secondary view to be the star rating if available.
-        if (starRating != null && starRating > 0) {
-            secondaryView.setVisibility(GONE);
-            ratingBar.setVisibility(VISIBLE);
-            ratingBar.setMax(5);
-            nativeAdView.setStarRatingView(ratingBar);
-        } else {
-            secondaryView.setText(secondaryText);
-            secondaryView.setVisibility(VISIBLE);
+//        if (starRating != null && starRating > 0) {
+//            secondaryView.setVisibility(GONE);
+//            ratingBar.setVisibility(VISIBLE);
+//            ratingBar.setMax(5);
+//            nativeAdView.setStarRatingView(ratingBar);
+//        } else {
+//            secondaryView.setText(secondaryText);
+//            secondaryView.setVisibility(VISIBLE);
+//            ratingBar.setVisibility(GONE);
+//        }
+        secondaryView.setText(secondaryText);
+        secondaryView.setVisibility(VISIBLE);
+        if (ratingBar != null) {
             ratingBar.setVisibility(GONE);
         }
 
@@ -298,7 +303,9 @@ public class TemplateView extends FrameLayout {
         tertiaryView = (TextView) findViewById(R.id.body);
 
         ratingBar = (RatingBar) findViewById(R.id.rating_bar);
-        ratingBar.setEnabled(false);
+        if (ratingBar != null) {
+            ratingBar.setEnabled(false);
+        }
 
         callToActionView = (Button) findViewById(R.id.cta);
         iconView = (ImageView) findViewById(R.id.icon);
